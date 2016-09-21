@@ -1,0 +1,27 @@
+{
+  "name": "retro",
+  "version": "1.0.0",
+  "description": "dmink.link",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/dmink/retro.git"
+  },
+  "keywords": [
+    "dmink-link"
+  ],
+  "author": "Dmitry Kostrubiak",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/dmink/retro#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-pug": "^3.0.4",
+    "gulp-rigger": "^0.5.8",
+    "gulp-ruby-sass": "^2.1.0"
+  }
+}

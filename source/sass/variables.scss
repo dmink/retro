@@ -1,0 +1,40 @@
+// Typography
+
+$font-base: "OpenSans", "Arial", sans-serif;
+$font-second: "OpenSans", "Arial", sans-serif;
+$font-high: "BazarMedium", "Arial", sans-serif;
+
+$font-section-title: "OpenSans", "Arial", sans-serif;
+$font-content-title: "OpenSans", "Arial", sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 1.8;
+
+$font-color-base: black;
+$font-color-second: gray;
+
+// Colors
+
+$blue: blue;
+
+// Blocks
+
+$wrapper-container: 980px;
+
+// Background
+
+$bg-base: white;
+$bg-skyblue: url("../img/template/bg-skyblue.jpg") repeat 0 0;
+$bg-beige: skyblue;
+$bg-orange: skyblue;
+$bg-lightgray: skyblue;
+$bg-darkblue: skyblue;
+
+// Effects
+
+$hover-opacity: .7;
+$hover-transition: all .25s ease;
+
+// Shadows
+
+$shadow-section: 0 0 5px 0 rgba(0, 0, 0, .25);
