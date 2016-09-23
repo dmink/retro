@@ -32,6 +32,10 @@ a {
 	text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
 h1, h2, h3, h4, h5, h6,
 ul, ol, li {
 	@include indent-zero;
@@ -63,7 +67,7 @@ p {
 	&__mobile {
 		display: none;
 		padding: 15px 10px;
-		font-family: $font-high;
+		font-family: $font-section-title;
 		font-size: 27px;
 		text-transform: uppercase;
 		color: #f9ebd9;
@@ -87,7 +91,7 @@ p {
 	&__link {
 		display: block;
 		padding: 41px 10px;
-		font-family: $font-high;
+		font-family: $font-section-title;
 		font-size: 27px;
 		text-transform: uppercase;
 		color: #f9ebd9;
@@ -109,11 +113,88 @@ p {
 
 .promo-header {
 	@include section-dashed;
-	padding: 40px 0;
+	padding: 33px 0 41px 0;
 	background: $bg-skyblue;
 
 	&__container {
 	    @include wrapper-container;
+		text-align: center;
+	}
+
+	&__title {
+		position: relative;
+		margin-bottom: 21px;
+		font-family: $font-main-title;
+		font-size: 110px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		color: #f6edd8;
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: .168em;
+			left: 0;
+			right: 0;
+			width: 384px;
+			height: 100px;
+			margin: 0 auto;
+			background: url("../img/template/main-title-mask.png") no-repeat 0 0;
+		}
+	}
+
+	&__tagname {}
+
+	&__subtitle {
+		position: relative;
+		display: inline-block;
+		padding: 4px 5% 20px 5%;
+		margin-bottom: 46px;
+		vertical-align: top;
+		font-family: $font-section-title;
+		font-size: 22px;
+		text-transform: uppercase;
+		color: #4b4e4c;
+		background: url("../img/template/main-subtitle-bg.png") repeat-x 0 -4px;
+		
+		&::before {
+			position: absolute;
+			content: '';
+			top: -4px;
+			left: -153px;
+			height: 66px;
+			width: 153px;
+			background: url("../img/template/main-subtitle-side.png") no-repeat 0 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: -4px;
+			right: -153px;
+			height: 66px;
+			width: 153px;
+			background: url("../img/template/main-subtitle-side.png") no-repeat 0 0;
+			transform: scaleX(-1);
+		}
+	}
+
+	&__welcome {
+		margin-bottom: 10px;
+		font-family: $font-section-title;
+		line-height: 1.5;
+		text-transform: uppercase;
+		color: #f7ebd8;
+	}
+
+	&__welcome--title {
+		display: block;
+		font-size: 32px;
+	}
+
+	&__welcome--subtitle {
+		display: block;
+		font-size: 26px;
 	}
 }
 
@@ -121,6 +202,57 @@ p {
 --------------------------------------------------------------------- */
 
 @import "slick";
+
+/* Slider promo */
+
+.slider-promo {
+	overflow: hidden;
+	margin-bottom: 22px;
+	border: 10px solid white;
+	border-radius: 6px;
+	box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
+
+	&__arrows {
+		position: absolute;
+		top: 41.6%;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: white url("../img/template/main-slider-arrow.png") no-repeat;
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	&__arrow-left {
+		transform: scaleX(-1);
+		left: -35px;
+		background-position: 25% 50%;
+	}
+
+	&__arrow-right {
+		right: -35px;
+		background-position: 25% 50%;
+	}
+
+	&__img {
+		display: block;
+		max-width: 100%;
+	}
+	
+	&__caption {
+		background-color: white;
+	}
+
+	&__title {
+		padding: 11px 10px 5px 10px;
+		font-family: $font-section-title;
+		font-size: 22px;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+
+}
 
 /* Page footer
 --------------------------------------------------------------------- */

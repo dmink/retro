@@ -21,3 +21,11 @@
         });
 
     });
+
+// Slider promo
+
+    $('.js-slider-promo').slick({
+        fade: true,
+        prevArrow: "<span class='slider-promo__arrows slider-promo__arrow-left'></span>",
+        nextArrow: "<span class='slider-promo__arrows slider-promo__arrow-right'></span>"
+    });
