@@ -1,8 +1,9 @@
 // Typography
 
-$font-base: "OpenSans", "Arial", sans-serif;
+$font-base: "RobotoSlabRegular", "Arial", sans-serif;
 $font-main-title: "SeasideResortNF", "Arial", sans-serif;
 $font-section-title: "BazarMedium", "Arial", sans-serif;
+$font-section-subtitle: "OswaldRegular", "Arial", sans-serif;
 
 $font-size-base: 16px;
 $line-height-base: 1.8;
@@ -22,8 +23,8 @@ $wrapper-container: 980px;
 
 $bg-base: white;
 $bg-skyblue: url("../img/template/bg-skyblue.jpg") repeat 0 0;
-$bg-beige: skyblue;
-$bg-orange: skyblue;
+$bg-beige: url("../img/template/bg-beige.jpg") repeat 0 0;
+$bg-orange: url("../img/template/bg-orange.jpg") repeat 0 0;
 $bg-lightgray: skyblue;
 $bg-darkblue: skyblue;
 

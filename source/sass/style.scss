@@ -45,6 +45,47 @@ p {
 	margin: 0 0 10px 0;
 }
 
+/* Titles
+--------------------------------------------------------------------- */
+
+/* Section head */
+
+.section-head {
+	margin-bottom: 30px;
+	text-align: center;
+
+	&__title {
+		position: relative;
+		margin-bottom: 28px;
+		text-shadow: 1.5px 2px 0 rgba(252, 250, 247, 1),
+					3px 3.5px 0 rgba(0, 0, 0, .7);
+		font-family: $font-section-title;
+		font-size: 90px;
+		line-height: 1;
+		text-transform: uppercase;
+		color: #3a3a3a;
+
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: -22px;
+			left: 0;
+			right: 0;
+			width: 123px;
+			height: 10px;
+			margin: 0 auto;
+			background: url("../img/template/section-title-underline.png") no-repeat 0 0;
+		}
+	}
+
+	&__subtitle {
+		font-family: $font-section-subtitle;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #38353e;
+	}
+}
+
 /* Top header
 --------------------------------------------------------------------- */
 
@@ -254,6 +295,106 @@ p {
 
 }
 
+/* Company skills
+--------------------------------------------------------------------- */
+
+.company-skills {
+	padding: 50px 0 68px 0;
+	background: $bg-beige;
+
+	&__container {
+	    @include wrapper-container;
+	}
+}
+
+/* Skills grid */
+
+.skills-grid {
+	@include clearfix;
+
+	&__item {
+		float: left;
+		width: 25%;
+		padding: 0 10px;
+
+		&:first-of-type {
+			padding-left: 0;
+		}
+
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	&__img {
+		min-height: 150px;
+		margin-bottom: 12px;
+		text-align: center;
+	}
+
+	&__img-link {
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		vertical-align: top;
+		border: 4px solid white;
+		background-color: #d45244;
+		box-shadow: 0 0 0 4px #d45244;
+		transition: $hover-transition;
+
+		&:hover {
+			margin-top: -6px;
+		}
+	}
+
+	&__head {
+		position: relative;
+		padding-bottom: 13px;
+		margin-bottom: 9px;
+		text-align: center;
+
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 3px;
+			width: 40px;
+			margin: 0 auto;
+			background-color: #383a3c;
+		}
+	}
+
+	&__head-title {
+		font-family: $font-section-title;
+		font-size: 27px;
+		text-transform: uppercase;
+	}
+
+	&__head-subtitle {
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	&__description-text {
+		font-size: 14px;
+	}
+}
+
+/* Company portfolio
+--------------------------------------------------------------------- */
+
+.company-portfolio {
+	padding: 51px 0;
+	background: url("../img/template/bg-orange.jpg") repeat 0 0;
+
+	&__container {
+	    @include wrapper-container;
+	}
+}
+
 /* Page footer
 --------------------------------------------------------------------- */
 
@@ -283,6 +424,15 @@ p {
 		&__link {
 			padding: 5px 50px;
 			font-size: 20px;
+		}
+	}
+
+	/* Skills grid */
+
+	.skills-grid {
+
+		&__item {
+			width: 50%;
 		}
 	}
 }
