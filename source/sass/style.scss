@@ -86,6 +86,39 @@ p {
 	}
 }
 
+/* Buttons
+--------------------------------------------------------------------- */
+
+/* Show more */
+
+.show-more {
+	position: relative;
+	text-align: center;
+
+	&::before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 40px;
+		height: 2px;
+		margin: 0 auto;
+		background-color: #383a3c;
+	}
+
+	&__link {
+		display: inline-block;
+		padding: 5px 15px;
+		vertical-align: top;
+		font-family: $font-section-subtitle;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #38353e;
+	}
+}
+
 /* Top header
 --------------------------------------------------------------------- */
 
@@ -387,13 +420,185 @@ p {
 --------------------------------------------------------------------- */
 
 .company-portfolio {
-	padding: 51px 0;
+	padding: 51px 0 46px 0;
 	background: url("../img/template/bg-orange.jpg") repeat 0 0;
 
 	&__container {
 	    @include wrapper-container;
 	}
+
+	&__head {}
 }
+
+/* Portfolio grid
+--------------------------------------------------------------------- */
+
+.portfolio-grid {
+	@include clearfix;
+
+	&__filter {
+		margin-bottom: 16px;
+	}
+}
+
+/* Filter list */
+
+.filter-list {
+	list-style: none;
+
+	&__item {
+		display: inline-block;
+		margin-right: 22px;
+		border-radius: 3px;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+		vertical-align: middle;
+
+		&--title {
+			box-shadow: none;
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: block;
+		padding: 1px 8px 2px 11px;
+		border-radius: 3px;
+		background-color: #fbfaf6;
+		font-size: 12px;
+		font-weight: bold;
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: -11px;
+			width: 0;
+			height: 0;
+			border-color: rgba(0, 0, 0, 0) #FCFAF7 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+			border-style: solid;
+			border-width: 12px 12px 12px 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: .8em;
+			left: -1px;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: #959ca3;
+		}
+
+		&.active {
+			background-color: #393a3a;
+			color: #fbfaf6;
+
+			&::before {
+				border-color: rgba(0, 0, 0, 0) #393a3a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+			}
+		}
+	}
+}
+
+/* Portfolio preview */
+
+.portfolio-preview {
+	@include clearfix;
+	margin-bottom: 15px;
+
+	&__item {
+		display: none;
+		float: left;
+		overflow: hidden;
+		width: 23.5%;
+		padding: 4px;
+		margin: 0 2% 2% 0;
+		background-color: #fbfaf6;
+		border-radius: 6px;
+		box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
+
+		&:nth-of-type(4n) {
+			margin: 0 0 2% 0;
+		}
+	}
+
+	&__link {
+		display: block;
+
+		&:hover {
+
+			.portfolio-preview__caption {
+
+				&::before {
+					top: -20px;
+				}
+			}
+		}
+	}
+
+	&__thumb {
+		display: block;
+	}
+
+	&__thumb-img {
+		display: block;
+		max-width: 100%;
+	}
+
+	&__caption {
+		position: relative;
+		display: block;
+		padding: 17px 5px 5px 5px;
+		text-align: center;
+		transition: $hover-transition;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: -15px;
+			left: 0;
+			right: 0;
+			width: 42px;
+			height: 42px;
+			margin: 0 auto;
+			border-radius: 50%;
+			background: white url("../img/template/icon-mono-monitor.png") no-repeat 50% 50%;
+			transition: $hover-transition;
+		}
+	}
+
+	&__caption-title {
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #383a3c;
+	}
+}
+
+/* Company blog
+--------------------------------------------------------------------- */
+
+.company-blog {
+	background: $bg-lightgray;
+
+	&__container {
+	    @include wrapper-container;
+	}
+}
+
+/* Contact info
+--------------------------------------------------------------------- */
+
+.contact-info {
+	background: $bg-darkblue;
+
+	&__container {
+		@include wrapper-container;
+	}
+}
+
 
 /* Page footer
 --------------------------------------------------------------------- */
@@ -433,6 +638,21 @@ p {
 
 		&__item {
 			width: 50%;
+		}
+	}
+
+	/* Portfolio grid */
+
+	.portfolio-preview {
+
+		&__item {
+			width: 48%;
+			margin: 0 4% 5% 0;
+			background-color: #fbfaf6;
+
+			&:nth-of-type(2n) {
+				margin: 0 0 5% 0;
+			}
 		}
 	}
 }

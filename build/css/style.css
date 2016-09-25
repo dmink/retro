@@ -548,6 +548,35 @@ p {
     text-transform: uppercase;
 }
 
+/* Buttons
+--------------------------------------------------------------------- */
+/* Show more */
+.show-more {
+    position: relative;
+    text-align: center;
+}
+.show-more::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 40px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #383a3c;
+}
+.show-more__link {
+    display: inline-block;
+    padding: 5px 15px;
+    vertical-align: top;
+    font-family: "OswaldRegular", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #38353e; 
+    text-transform: uppercase;
+}
+
 /* Top header
 --------------------------------------------------------------------- */
 .top-header {
@@ -941,10 +970,161 @@ p {
 /* Company portfolio
 --------------------------------------------------------------------- */
 .company-portfolio {
-    padding: 51px 0;
+    padding: 51px 0 46px 0;
     background: url("../img/template/bg-orange.jpg") repeat 0 0;
 }
 .company-portfolio__container {
+    width: 100%;
+    max-width: 980px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+/* Portfolio grid
+--------------------------------------------------------------------- */
+.portfolio-grid::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.portfolio-grid__filter {
+    margin-bottom: 16px;
+}
+
+/* Filter list */
+.filter-list {
+    list-style: none;
+}
+.filter-list__item {
+    display: inline-block;
+    margin-right: 22px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    vertical-align: middle;
+}
+.filter-list__item--title {
+    box-shadow: none;
+}
+.filter-list__label {
+    position: relative;
+    display: block;
+    padding: 1px 8px 2px 11px;
+    border-radius: 3px;
+    background-color: #fbfaf6;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.filter-list__label::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -11px;
+    width: 0;
+    height: 0;
+    border-color: transparent #fcfaf7 transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+}
+.filter-list__label::after {
+    position: absolute;
+    content: "";
+    top: .8em;
+    left: -1px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #959ca3;
+}
+.filter-list__label.active {
+    background-color: #393a3a;
+    color: #fbfaf6;
+}
+.filter-list__label.active::before {
+    border-color: transparent #393a3a transparent transparent;
+}
+
+/* Portfolio preview */
+.portfolio-preview {
+    margin-bottom: 15px;
+}
+.portfolio-preview::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.portfolio-preview__item {
+    display: none;
+    float: left;
+    overflow: hidden;
+    width: 23.5%;
+    padding: 4px;
+    margin: 0 2% 2% 0;
+    border-radius: 6px;
+    background-color: #fbfaf6;
+    box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
+}
+.portfolio-preview__item:nth-of-type(4n) {
+    margin: 0 0 2% 0;
+}
+.portfolio-preview__link {
+    display: block;
+}
+.portfolio-preview__link:hover .portfolio-preview__caption::before {
+    top: -20px;
+}
+.portfolio-preview__thumb {
+    display: block;
+}
+.portfolio-preview__thumb-img {
+    display: block;
+    max-width: 100%;
+}
+.portfolio-preview__caption {
+    position: relative;
+    display: block;
+    padding: 17px 5px 5px 5px;
+    text-align: center;
+    transition: all .25s ease;
+}
+.portfolio-preview__caption::before {
+    position: absolute;
+    content: "";
+    top: -15px;
+    left: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: white url("../img/template/icon-mono-monitor.png") no-repeat 50% 50%;
+    transition: all .25s ease;
+}
+.portfolio-preview__caption-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #383a3c; 
+    text-transform: uppercase;
+}
+
+/* Company blog
+--------------------------------------------------------------------- */
+.company-blog {
+    background: url("../img/template/bg-lightgray.jpg") repeat 0 0;
+}
+.company-blog__container {
+    width: 100%;
+    max-width: 980px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+/* Contact info
+--------------------------------------------------------------------- */
+.contact-info {
+    background: url("../img/template/bg-darkblue.jpg") repeat 0 0;
+}
+.contact-info__container {
     width: 100%;
     max-width: 980px;
     padding: 0 10px;
@@ -977,5 +1157,15 @@ p {
     /* Skills grid */
     .skills-grid__item {
         width: 50%;
+    }
+
+    /* Portfolio grid */
+    .portfolio-preview__item {
+        width: 48%;
+        margin: 0 4% 5% 0;
+        background-color: #fbfaf6;
+    }
+    .portfolio-preview__item:nth-of-type(2n) {
+        margin: 0 0 5% 0;
     }
 }

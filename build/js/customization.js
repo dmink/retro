@@ -29,3 +29,31 @@
         prevArrow: "<span class='slider-promo__arrows slider-promo__arrow-left'></span>",
         nextArrow: "<span class='slider-promo__arrows slider-promo__arrow-right'></span>"
     });
+
+// Portfolio grid
+
+    $(function () {
+
+        var filterList = {
+
+            init: function () {
+
+                $('.js-portfolio-preview').mixItUp({
+                    selectors: {
+                        target: '.portfolio-preview__item',
+                        filter: '.filter-list__label'
+                    },
+                    load: {
+                        filter: '.app, .card, .icon, .logo, .web'
+                    }
+                });
+
+            }
+
+        };
+
+        // Run the show!
+        filterList.init();
+
+
+    });
