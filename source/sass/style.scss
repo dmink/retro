@@ -91,6 +91,10 @@ p {
 			text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
 						3px 3.5px 0 rgba(252, 250, 247, 1);
 			color: #f6edd8;
+
+			&::after {
+				background: url("../img/template/section-title-underline-light.png") no-repeat 0 0;
+			}
 		}
 
 		.section-head__subtitle {
@@ -102,11 +106,25 @@ p {
 /* Widget title */
 
 .widget-title {
+	position: relative;
+	margin-bottom: 18px;
 	font-family: $font-section-title;
 	font-size: 24px;
 	text-transform: uppercase;
 	text-align: center;
 	color: #f6edd8;
+
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 42px;
+		height: 2px;
+		margin: 0 auto;
+		background-color: #f6edd8;;
+	}
 }
 
 /* Buttons
@@ -745,7 +763,7 @@ p {
 
 .contact-info {
 	@include section-dashed;
-	padding: 50px 0 50px 0;
+	padding: 52px 0 57px 0;
 	background: $bg-darkblue;
 
 	&__container {
@@ -754,6 +772,54 @@ p {
 
 	.section-head {
 		@extend .section-head--light;
+	}
+
+	&__form {
+		margin-bottom: 22px;
+		text-align: center;
+	}
+
+	&__form-container {
+		display: inline-block;
+		width: 100%;
+		max-width: 540px;
+		margin: 0 auto;
+		vertical-align: top;
+	}
+}
+
+/* Form feedback */
+
+.form-feedback {
+
+	&__field {
+		margin-bottom: 10px;
+	}
+
+	&__field--btn {
+		text-align: left;
+	}
+
+	&__input {
+		display: block;
+		width: 100%;
+		padding: 5px 10px 4px 10px;
+		border: none;
+		border-radius: 6px;
+		box-shadow: 1.4px 1.4px 0 rgba(255, 255, 255, .4),
+					inset 1.4px 1.4px 0 rgba(0, 0, 0, .2);
+	}
+
+	&__btn {
+		display: inline-block;
+		padding: 5px 17px 4px 17px;
+		border: none;
+		border-radius: 6px;
+		background-color: #fcfaf7;
+		box-shadow: 2.1px 2.1px 2px rgba(0, 0, 0, .2);
+		vertical-align: top;
+		font-weight: bold;
+		cursor: pointer;
 	}
 }
 
@@ -764,6 +830,7 @@ p {
 
 	&__item {
 		display: inline-block;
+		margin: 0 2px 15px 2px;
 		vertical-align: middle;
 	}
 
@@ -774,13 +841,32 @@ p {
 		margin: 0 5px;
 		border: 2px solid #383a3c;
 		border-radius: 50%;
-		background-color: #f5eee3;
 		box-shadow: 0 0 0 3px #f5eee3;
 		transition: $hover-transition;
 
 		&:hover {
 			margin-top: -13px;
 		}
+	}
+
+	&__link--sk {
+		background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+	}
+
+	&__link--fb {
+		background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+	}
+
+	&__link--fl {
+		background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+	}
+
+	&__link--em {
+		background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+	}
+
+	&__link--uw {
+		background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
 	}
 }
 
