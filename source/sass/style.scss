@@ -84,6 +84,29 @@ p {
 		text-transform: uppercase;
 		color: #38353e;
 	}
+
+	&--light {
+		
+		.section-head__title {
+			text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
+						3px 3.5px 0 rgba(252, 250, 247, 1);
+			color: #f6edd8;
+		}
+
+		.section-head__subtitle {
+			color: #f6edd8;
+		}
+	}
+}
+
+/* Widget title */
+
+.widget-title {
+	font-family: $font-section-title;
+	font-size: 24px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #f6edd8;
 }
 
 /* Buttons
@@ -324,15 +347,14 @@ p {
 		line-height: 1;
 		text-transform: uppercase;
 	}
-
-
 }
 
 /* Company skills
 --------------------------------------------------------------------- */
 
 .company-skills {
-	padding: 50px 0 68px 0;
+	@include section-dashed;
+	padding: 50px 0 38px 0;
 	background: $bg-beige;
 
 	&__container {
@@ -349,6 +371,7 @@ p {
 		float: left;
 		width: 25%;
 		padding: 0 10px;
+		margin-bottom: 30px;
 
 		&:first-of-type {
 			padding-left: 0;
@@ -420,6 +443,7 @@ p {
 --------------------------------------------------------------------- */
 
 .company-portfolio {
+	@include section-dashed;
 	padding: 51px 0 46px 0;
 	background: url("../img/template/bg-orange.jpg") repeat 0 0;
 
@@ -573,7 +597,7 @@ p {
 		font-size: 12px;
 		text-transform: uppercase;
 		font-weight: bold;
-		color: #383a3c;
+		color: $font-color-base;
 	}
 }
 
@@ -581,6 +605,8 @@ p {
 --------------------------------------------------------------------- */
 
 .company-blog {
+	@include section-dashed;
+	padding: 50px 0 45px 0;
 	background: $bg-lightgray;
 
 	&__container {
@@ -588,20 +614,175 @@ p {
 	}
 }
 
+/* Post preview */
+
+.posts-list {
+	margin-bottom: 9px;
+}
+
+.post-preview {
+	@include clearfix;
+	margin-bottom: 29px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	&__thumb {
+		float: left;
+		width: 31%;
+		margin-right: 3%;
+		text-align: center;
+	}
+
+	&__thumb-link {
+		display: inline-block;
+		border: 5px solid #fbfaf6;
+		border-radius: 6px;
+		box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
+		vertical-align: top;
+	}
+
+	&__thumb-img {
+		display: block;
+		max-width: 100%;
+	}
+
+	&__info {
+		float: left;
+		width: 66%;
+	}
+
+	&__head {
+		position: relative;
+		padding-bottom: 13px;
+		margin-bottom: 10px;
+
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			width: 44px;
+			height: 2px;
+			background-color: #383a3c;
+		}
+	}
+
+	&__title-link {
+		font-size: 24px;
+		line-height: 1.45;
+		font-weight: bold;
+		color: $font-color-base;
+	}
+
+	&__detail {
+	    @include clearfix;
+		line-height: 1;
+	}
+
+	&__detail-meta {
+		float: left;
+		width: 70%;
+	}
+
+	&__meta {
+		list-style: none;
+	}
+
+	&__meta-item {
+		display: inline-block;
+		vertical-align: middle;
+		font-family: $font-section-subtitle;
+		font-size: 10px;
+		line-height: 1;
+		text-transform: uppercase;
+		font-weight: bold;
+
+		&::after {
+			display: inline-block;
+			content: '//';
+			vertical-align: middle;
+		}
+
+		&:last-of-type {
+
+			&::after {
+				content: none;
+			}
+		}
+	}
+
+	&__meta-category {
+		line-height: 1;
+		color: $font-color-base;
+	}
+
+	&__detail-comments {
+		float: left;
+		width: 30%;
+		text-align: right;
+	}
+
+	&__comment {
+		font-family: $font-section-subtitle;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $font-color-base;
+	}
+
+	&__description-more {
+		font-size: 11px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $font-color-base;
+	}
+}
+
 /* Contact info
 --------------------------------------------------------------------- */
 
 .contact-info {
+	@include section-dashed;
+	padding: 50px 0 50px 0;
 	background: $bg-darkblue;
 
 	&__container {
 		@include wrapper-container;
 	}
+
+	.section-head {
+		@extend .section-head--light;
+	}
 }
 
+/* Social list */
 
-/* Page footer
---------------------------------------------------------------------- */
+.social-list {
+	text-align: center;
+
+	&__item {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__link {
+		display: block;
+		width: 80px;
+		height: 80px;
+		margin: 0 5px;
+		border: 2px solid #383a3c;
+		border-radius: 50%;
+		background-color: #f5eee3;
+		box-shadow: 0 0 0 3px #f5eee3;
+		transition: $hover-transition;
+
+		&:hover {
+			margin-top: -13px;
+		}
+	}
+}
 
 /* Responsive
 --------------------------------------------------------------------- */
@@ -653,6 +834,35 @@ p {
 			&:nth-of-type(2n) {
 				margin: 0 0 5% 0;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	/* Skills grid */
+
+	.skills-grid {
+
+		&__item {
+			width: 100%;
+		}
+	}
+
+	/* Post preview */
+
+	.post-preview {
+		margin-bottom: 60px;
+
+		&__thumb {
+			float: none;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
+		&__info {
+			float: none;
+			width: 100%;
 		}
 	}
 }
