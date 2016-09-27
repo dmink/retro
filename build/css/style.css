@@ -1426,19 +1426,16 @@ p {
     margin-top: -13px;
 }
 .social-list__link--sk {
-    background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+    background: #f5eee3 url("../img/template/social-list-skype.png") no-repeat 50% 50%;
 }
 .social-list__link--fb {
     background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
 }
 .social-list__link--fl {
-    background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+    background: #f5eee3 url("../img/template/social-list-freelance.png") no-repeat 50% 50%;
 }
 .social-list__link--em {
-    background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
-}
-.social-list__link--uw {
-    background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
+    background: #f5eee3 url("../img/template/social-list-email.png") no-repeat 50% 50%;
 }
 
 /* Responsive
