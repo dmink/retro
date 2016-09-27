@@ -258,7 +258,9 @@ p {
 		}
 	}
 
-	&__tagname {}
+	&__tagname {
+		overflow: hidden;
+	}
 
 	&__subtitle {
 		position: relative;
@@ -921,6 +923,28 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+
+	/* Section head */
+
+	.section-head {
+
+		&__title {
+			font-size: 70px;
+		}
+	}
+
+	/* Promo header */
+
+	.promo-header {
+
+		&__title {
+			font-size: 80px;
+
+			&::after {
+				content: none;
+			}
+		}
+	}
 
 	/* Skills grid */
 
