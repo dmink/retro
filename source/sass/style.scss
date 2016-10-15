@@ -165,12 +165,13 @@ p {
 
 .top-header {
 	@include section-dashed($line-top: none);
-	background: $bg-skyblue;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-	z-index: 10;
 
 	&__container {
-		@include wrapper-container;
+		position: fixed;
+		width: 100%;
+		background: $bg-skyblue;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+		z-index: 5;
 	}
 }
 
@@ -199,10 +200,6 @@ p {
 		text-align: center;
 	}
 
-	&__item--logo {
-		//margin-top: -10px;
-	}
-
 	&__link {
 		display: block;
 		padding: 41px 10px;
@@ -212,14 +209,33 @@ p {
 		color: #f9ebd9;
 	}
 
-	&__link--logo {
-		//margin-bottom: -10px;
+	&__item--logo {
+		position: relative;
+		width: 152px;
+		height: 130px;
+		padding: 5px 0 0 0;
 	}
 
-	&__logo {
-		display: block;
-		max-width: 100%;
-		margin: 0 auto;
+	&__link--logo {
+		@include ib-align-middle;
+		position: absolute;
+		width: 152px;
+		height: 152px;
+		padding: 0;
+		border-radius: 50%;
+		background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
+		z-index: 2;
+	}
+
+	&__link--name {
+		display: inline-block;
+		//padding-bottom: 5px;
+		vertical-align: middle;
+		font-size: 80px;
+		line-height: 1;
+		text-transform: lowercase;
+		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
+					2.5px 3px 0 rgba(252, 250, 247, 1);
 	}
 }
 
@@ -889,6 +905,10 @@ p {
 			float: none;
 			width: 100%;
 			text-align: left;
+		}
+
+		&__item--logo {
+			display: none;
 		}
 
 		&__link {

@@ -616,9 +616,6 @@ p {
 --------------------------------------------------------------------- */
 .top-header {
     position: relative;
-    background: url("../img/template/bg-skyblue.jpg") repeat 0 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-    z-index: 10;
 }
 .top-header::before {
     position: absolute;
@@ -641,10 +638,11 @@ p {
     border-bottom: 1px dashed rgba(255, 255, 255, .4);
 }
 .top-header__container {
+    position: fixed;
     width: 100%;
-    max-width: 1000px;
-    padding: 0 20px;
-    margin: 0 auto;
+    background: url("../img/template/bg-skyblue.jpg") repeat 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    z-index: 5;
 }
 
 /* Main navigation */
@@ -684,10 +682,35 @@ p {
     color: #f9ebd9; 
     text-transform: uppercase;
 }
-.main-menu__logo {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
+.main-menu__item--logo {
+    position: relative;
+    width: 152px;
+    height: 130px;
+    padding: 5px 0 0 0;
+}
+.main-menu__link--logo {
+    position: absolute;
+    width: 152px;
+    height: 152px;
+    padding: 0;
+    border-radius: 50%;
+    background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
+    z-index: 2;
+}
+.main-menu__link--logo::after {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+.main-menu__link--name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 80px;
+    line-height: 1;
+    text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7), 2.5px 3px 0 #fcfaf7; 
+    text-transform: lowercase;
 }
 
 /* Promo header
@@ -1456,6 +1479,9 @@ p {
         float: none;
         width: 100%;
         text-align: left;
+    }
+    .main-menu__item--logo {
+        display: none;
     }
     .main-menu__link {
         padding: 5px 50px;
