@@ -1,1 +1,1 @@
-npm install gulp gulp-sass gulp-autoprefixer gulp-rigger gulp-csscomb --save-dev
+npm install gulp gulp-ruby-sass gulp-autoprefixer gulp-rigger gulp-csscomb --save-dev
