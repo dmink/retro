@@ -1,26 +1,18 @@
 ;'use strict';
 
-// Main navigation - mobile
+// Sticky navigation - scrolling
 
-    $(function() {
+$(function() {
+    $(window).scroll( function() {
 
-        var mobileMenuBtn = $('.js-menu-btn'),
-            mobileMenu = $('.js-menu-mobile'),
-            windowWidth = $(window).width(),
-            mobileScreenWidth = 800;
-
-        $(mobileMenuBtn).on( 'click', function(event) {
-            event.preventDefault();
-            mobileMenu.slideToggle();
-        });
-
-        $(window).resize( function() {
-            if( windowWidth > mobileScreenWidth && mobileMenu.is(':hidden') ) {
-                mobileMenu.removeAttr('style');
-            }
-        });
-
+        if($(this).scrollTop() >= 1) {
+            $('.top-header').addClass('top-header--scrolling');
+        }
+        else{
+            $('.top-header').removeClass('top-header--scrolling');
+        }
     });
+});
 
 // Main navigation - moving to anchor and active item
 
@@ -41,7 +33,7 @@
             $target = $(target);
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 60 + 'px'
+                'scrollTop': $target.offset().top - 50 + 'px'
             }, 500, 'swing', function () {
                 window.location.hash = target;
                 $(document).on("scroll", onScroll);
@@ -56,7 +48,7 @@
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
 
-            if (refElement.position().top-60 <= scrollPos && refElement.position().top-60 + refElement.height() > scrollPos) {
+            if (refElement.position().top-50 <= scrollPos && refElement.position().top-50 + refElement.height() > scrollPos) {
                 $('.js-main-menu li a').removeClass("active");
                 currLink.addClass("active");
             }

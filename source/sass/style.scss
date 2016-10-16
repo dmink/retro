@@ -21,6 +21,7 @@
 }
 
 body {
+	position: relative;
 	background: $bg-base;
 	font-family: $font-base;
 	font-size: $font-size-base;
@@ -164,33 +165,59 @@ p {
 --------------------------------------------------------------------- */
 
 .top-header {
-	@include section-dashed($line-top: none);
+	height: 130px;
 
 	&__container {
+
 		position: fixed;
 		width: 100%;
 		background: $bg-skyblue;
 		box-shadow: 0 0 10px rgba(0, 0, 0, .25);
 		z-index: 5;
 	}
+
+	&.top-header--scrolling {
+		height: 69px;
+
+		.main-navigation {
+			@include section-dashed($line-top: none, $bottom: 6px);
+		}
+
+		.main-menu__item--logo {
+			height: 69px;
+		}
+
+		.main-menu__link {
+			padding: 15px 10px;
+			font-size: 22px;
+		}
+
+		.main-menu__link--logo {
+			top: -10px;
+			right: 0;
+			left: 0;
+			width: 80px;
+			height: 80px;
+			margin: 0 auto;
+			background: url("../img/template/bg-menu-logo-scrolling.png") no-repeat 0 0;
+		}
+
+		.main-menu__link--name {
+			font-size: 38px;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, .7),
+						2px 2px 0 rgba(252, 250, 247, 1);
+		}
+	}
 }
 
 /* Main navigation */
 
 .main-navigation {
-	@include wrapper-container;
-
-	&__mobile {
-		display: none;
-		padding: 15px 10px;
-		font-family: $font-section-title;
-		font-size: 27px;
-		text-transform: uppercase;
-		color: #f9ebd9;
-	}
+	@include section-dashed($line-top: none);
 }
 
 .main-menu {
+	@include wrapper-container;
 	@include clearfix;
 	list-style: none;
 
@@ -211,7 +238,6 @@ p {
 
 	&__item--logo {
 		position: relative;
-		width: 152px;
 		height: 130px;
 		padding: 5px 0 0 0;
 	}
@@ -219,9 +245,13 @@ p {
 	&__link--logo {
 		@include ib-align-middle;
 		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
 		width: 152px;
 		height: 152px;
 		padding: 0;
+		margin: 0 auto;
 		border-radius: 50%;
 		background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
 		z-index: 2;
@@ -229,7 +259,6 @@ p {
 
 	&__link--name {
 		display: inline-block;
-		//padding-bottom: 5px;
 		vertical-align: middle;
 		font-size: 80px;
 		line-height: 1;
@@ -353,7 +382,7 @@ p {
 		border-radius: 50%;
 		background: white url("../img/template/main-slider-arrow.png") no-repeat;
 		cursor: pointer;
-		z-index: 10;
+		z-index: 3;
 	}
 
 	&__arrow-left {
@@ -887,10 +916,53 @@ p {
 /* Responsive
 --------------------------------------------------------------------- */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
+
+	/* Top header */
+
+	.top-header {
+		height: 56px;
+
+		&.top-header--scrolling {
+
+			.main-menu__link {
+				padding: 12px 10px;
+				font-size: 18px;
+			}
+		}
+	}
 
 	/* Main navigation */
 
+	.main-navigation {
+		@include section-dashed($line-top: none, $bottom: 6px);
+	}
+
+	.main-menu {
+
+		&__item {
+			width: 50%;
+		}
+
+		&__item--about {
+			display: none;
+		}
+
+		&__item--logo {
+			display: none;
+		}
+
+		&__item--blog {
+			display: none;
+		}
+
+		&__link {
+			padding: 12px 10px;
+			font-size: 18px;
+		}
+	}
+
+/*
 	.main-navigation {
 
 		&__mobile {
@@ -916,7 +988,7 @@ p {
 			font-size: 20px;
 		}
 	}
-
+*/
 	/* Skills grid */
 
 	.skills-grid {
