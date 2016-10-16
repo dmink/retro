@@ -1500,6 +1500,9 @@ p {
 .social-list__link--fb {
     background: #f5eee3 url("../img/template/social-list-facebook.png") no-repeat 50% 50%;
 }
+.social-list__link--gh {
+    background: #f5eee3 url("../img/template/social-list-github.png") no-repeat 50% 50%;
+}
 .social-list__link--fl {
     background: #f5eee3 url("../img/template/social-list-freelance.png") no-repeat 50% 50%;
 }
