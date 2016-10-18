@@ -6,34 +6,36 @@ const gulp = require('gulp'),
     csscomb = require('gulp-csscomb'),
     rigger = require('gulp-rigger');
 
-var sassFold = 'source/sass/*.scss',
-    htmlFold = 'source/html/*.html';
+var scssFold = 'source/sass/*.scss',
+    blocksFold = 'source/html/*.html';
 
-var indexSrc = 'source/index.html',
-    sassSrc = 'source/sass/style.scss',
+// Source
+var pagesSrc = 'source/*.html',
+    styleSrc = 'source/sass/style.scss',
     jsSrc = 'source/js/*.*',
     fontsSrc = 'source/fonts/**',
     imgSrc = 'source/img/**';
 
-var indexDest = 'build',
-    sassDest = 'build/css',
+// Build
+var pagesDest = 'build',
+    styleDest = 'build/css',
     jsDest = 'build/js',
     fontsDest = 'build/fonts',
     imgDest = 'build/img';
 
 // Pages
-    gulp.task('index', function () {
-    gulp.src(indexSrc)
+    gulp.task('pages', function () {
+    gulp.src(pagesSrc)
         .pipe(rigger())
-        .pipe(gulp.dest(indexDest));
+        .pipe(gulp.dest(pagesDest));
 });
 
-// SASS to CSS
+// Styles
 gulp.task('styles', function() {
-    return sass(sassSrc)
+    return sass(styleSrc)
         .pipe(autoprefixer('last 2 version'))
         .pipe(csscomb())
-        .pipe(gulp.dest(sassDest));
+        .pipe(gulp.dest(styleDest));
 });
 
 // JavaScript
@@ -56,9 +58,9 @@ gulp.task('img', function() {
 
 // Watcher
 gulp.task('watch', function() {
-    gulp.watch(sassFold, ['styles']);
-    gulp.watch(indexSrc, ['index']);
-    gulp.watch(htmlFold, ['index']);
+    gulp.watch(scssFold, ['styles']);
+    gulp.watch(blocksFold, ['pages']);
+    gulp.watch(pagesSrc, ['pages']);
     gulp.watch(jsSrc, ['js']);
     gulp.watch(imgSrc, ['img']);
     gulp.watch(fontsSrc, ['fonts']);
@@ -66,4 +68,4 @@ gulp.task('watch', function() {
 
 // Default (gulp) task
 gulp.task('default', ['js', 'img', 'fonts',
-    'styles', 'index', 'watch']);
+    'styles', 'pages', 'watch']);
