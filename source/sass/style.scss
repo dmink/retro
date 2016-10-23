@@ -168,7 +168,6 @@ p {
 	height: 130px;
 
 	&__container {
-
 		position: fixed;
 		width: 100%;
 		background: $bg-skyblue;
@@ -214,8 +213,17 @@ p {
 
 .main-navigation {
 	@include section-dashed($line-top: none);
-}
 
+	&__mobile {
+		display: none;
+		padding: 15px 10px;
+		font-family: $font-section-title;
+		font-size: 27px;
+		text-transform: uppercase;
+		color: #f9ebd9;
+	}
+}
+/*
 .main-menu {
 	@include wrapper-container;
 	@include clearfix;
@@ -265,6 +273,57 @@ p {
 		text-transform: lowercase;
 		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
 					2.5px 3px 0 rgba(252, 250, 247, 1);
+	}
+}
+*/
+
+.main-menu {
+	@include wrapper-container;
+	@include clearfix;
+	list-style: none;
+
+	&__item {
+		float: left;
+		width: 20%;
+		text-align: center;
+	}
+
+	&__link {
+		display: block;
+		padding: 41px 10px;
+		font-family: $font-section-title;
+		font-size: 27px;
+		text-transform: uppercase;
+		color: #f9ebd9;
+	}
+
+	&__item--logo {
+		position: relative;
+		width: 152px;
+		height: 130px;
+		padding: 5px 0 0 0;
+	}
+
+	&__link--logo {
+		@include ib-align-middle;
+		position: absolute;
+		width: 152px;
+		height: 152px;
+		padding: 0;
+		border-radius: 50%;
+		background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
+		z-index: 2;
+	}
+
+	&__link--name {
+		display: inline-block;
+		//padding-bottom: 5px;
+		vertical-align: middle;
+		font-size: 80px;
+		line-height: 1;
+		text-transform: lowercase;
+		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
+		2.5px 3px 0 rgba(252, 250, 247, 1);
 	}
 }
 
@@ -955,6 +1014,33 @@ p {
 	/* Main navigation */
 
 	.main-navigation {
+
+		&__mobile {
+			display: block;
+		}
+	}
+
+	.main-menu {
+		display: none;
+
+		&__item {
+			float: none;
+			width: 100%;
+			text-align: left;
+		}
+
+		&__item--logo {
+			display: none;
+		}
+
+		&__link {
+			padding: 5px 50px;
+			font-size: 20px;
+		}
+	}
+
+/*
+	.main-navigation {
 		@include section-dashed($line-top: none, $bottom: 6px);
 	}
 
@@ -981,7 +1067,7 @@ p {
 			font-size: 18px;
 		}
 	}
-
+*/
 /*
 	.main-navigation {
 

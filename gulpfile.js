@@ -7,7 +7,7 @@ const gulp = require('gulp'),
     rigger = require('gulp-rigger');
 
 var scssFold = 'source/sass/*.scss',
-    blocksFold = 'source/html/*.html';
+    blocksFold = 'source/blocks/*.html';
 
 // Source
 var pagesSrc = 'source/*.html',
