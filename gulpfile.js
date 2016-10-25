@@ -12,6 +12,7 @@ var scssFold = 'source/sass/*.scss',
 // Source
 var pagesSrc = 'source/*.html',
     styleSrc = 'source/sass/style.scss',
+    singleSrc = 'source/single/**/*.*',
     jsSrc = 'source/js/*.*',
     fontsSrc = 'source/fonts/**',
     imgSrc = 'source/img/**';
@@ -19,15 +20,23 @@ var pagesSrc = 'source/*.html',
 // Build
 var pagesDest = 'build',
     styleDest = 'build/css',
+    singleDest = 'build',
     jsDest = 'build/js',
     fontsDest = 'build/fonts',
     imgDest = 'build/img';
 
 // Pages
-    gulp.task('pages', function () {
+gulp.task('pages', function () {
     gulp.src(pagesSrc)
         .pipe(rigger())
         .pipe(gulp.dest(pagesDest));
+});
+
+// Single pages (posts, projects etc)
+gulp.task('single', function () {
+    gulp.src(singleSrc)
+        .pipe(rigger())
+        .pipe(gulp.dest(singleDest));
 });
 
 // Styles
@@ -59,8 +68,9 @@ gulp.task('img', function() {
 // Watcher
 gulp.task('watch', function() {
     gulp.watch(scssFold, ['styles']);
-    gulp.watch(blocksFold, ['pages']);
+    gulp.watch(blocksFold, ['pages', 'single']);
     gulp.watch(pagesSrc, ['pages']);
+    gulp.watch(singleSrc, ['single']);
     gulp.watch(jsSrc, ['js']);
     gulp.watch(imgSrc, ['img']);
     gulp.watch(fontsSrc, ['fonts']);
@@ -68,4 +78,4 @@ gulp.task('watch', function() {
 
 // Default (gulp) task
 gulp.task('default', ['js', 'img', 'fonts',
-    'styles', 'pages', 'watch']);
+    'styles', 'single', 'pages', 'watch']);
