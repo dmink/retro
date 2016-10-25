@@ -7,11 +7,12 @@
         var mobileMenuBtn = $('.js-menu-btn'),
             mobileMenu = $('.js-menu-mobile'),
             windowWidth = $(window).width(),
-            mobileScreenWidth = 800;
+            mobileScreenWidth = 840;
 
         $(mobileMenuBtn).on( 'click', function(event) {
             event.preventDefault();
             mobileMenu.slideToggle();
+            mobileMenu.addClass('main-menu__mobile');
         });
 
         $(window).resize( function() {

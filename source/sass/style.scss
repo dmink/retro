@@ -213,24 +213,6 @@ p {
 
 .main-navigation {
 	@include section-dashed($line-top: none);
-
-	&__mobile {
-		@include clearfix;
-		display: none;
-		padding: 15px 50px;
-		font-family: $font-section-title;
-		font-size: 27px;
-		text-transform: uppercase;
-		color: #f9ebd9;
-
-		&--title {
-			float: left;
-		}
-
-		&--logo {
-			float: right;
-		}
-	}
 }
 
 .main-menu {
@@ -273,13 +255,58 @@ p {
 
 	&__link--name {
 		display: inline-block;
-		//padding-bottom: 5px;
 		vertical-align: middle;
 		font-size: 80px;
 		line-height: 1;
 		text-transform: lowercase;
 		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
 		2.5px 3px 0 rgba(252, 250, 247, 1);
+	}
+
+	&__mobile {
+		padding-bottom: 15px;
+	}
+}
+
+.menu-mobile {
+	@include clearfix;
+	display: none;
+
+	&__title {
+		position: absolute;
+		top: .2em;
+		left: 4%;
+		font-family: "BazarMedium", "Arial", sans-serif;
+		font-size: 27px;
+		color: #f9ebd9;
+		text-transform: uppercase;
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		height: 65px;
+		text-align: center;
+	}
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 80px;
+		height: 80px;
+		padding: .5em 0 0 0;
+		margin: 0 auto;
+		background: url("../img/template/bg-menu-logo-scrolling.png") no-repeat 0 0;
+		font-family: $font-section-title;
+		font-size: 38px;
+		line-height: 1;
+		text-transform: lowercase;
+		color: #f9ebd9;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, .7),
+					2px 2px 0 rgba(252, 250, 247, 1);
+		z-index: 3;
 	}
 }
 
@@ -957,11 +984,8 @@ p {
 
 	/* Main navigation */
 
-	.main-navigation {
-
-		&__mobile {
-			display: block;
-		}
+	.menu-mobile {
+		display: block;
 	}
 
 	.main-menu {
@@ -980,6 +1004,16 @@ p {
 		&__link {
 			padding: 5px 50px;
 			font-size: 20px;
+		}
+	}
+
+	/* Promo header */
+
+	.promo-header {
+
+		&__title {
+			font-size: 60px;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
 		}
 	}
 

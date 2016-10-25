@@ -696,25 +696,6 @@ p {
     border-top: 1px dashed rgba(0, 0, 0, .4);
     border-bottom: 1px dashed rgba(255, 255, 255, .4);
 }
-.main-navigation__mobile {
-    display: none;
-    padding: 15px 50px;
-    font-family: "BazarMedium", "Arial", sans-serif;
-    font-size: 27px;
-    color: #f9ebd9; 
-    text-transform: uppercase;
-}
-.main-navigation__mobile::after {
-    display: block;
-    content: "";
-    clear: both;
-}
-.main-navigation__mobile--title {
-    float: left;
-}
-.main-navigation__mobile--logo {
-    float: right;
-}
 
 .main-menu {
     width: 100%;
@@ -770,6 +751,51 @@ p {
     line-height: 1;
     text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7), 2.5px 3px 0 #fcfaf7; 
     text-transform: lowercase;
+}
+.main-menu__mobile {
+    padding-bottom: 15px;
+}
+
+.menu-mobile {
+    display: none;
+}
+.menu-mobile::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.menu-mobile__title {
+    position: absolute;
+    top: .2em;
+    left: 4%;
+    font-family: "BazarMedium", "Arial", sans-serif;
+    font-size: 27px;
+    color: #f9ebd9;
+    text-transform: uppercase;
+}
+.menu-mobile__link {
+    position: relative;
+    display: block;
+    height: 65px;
+    text-align: center;
+}
+.menu-mobile__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    padding: .5em 0 0 0;
+    margin: 0 auto;
+    background: url("../img/template/bg-menu-logo-scrolling.png") no-repeat 0 0;
+    font-family: "BazarMedium", "Arial", sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    color: #f9ebd9;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .7), 2px 2px 0 #fcfaf7;
+    text-transform: lowercase;
+    z-index: 3;
 }
 
 /* Promo header
@@ -1540,7 +1566,7 @@ p {
     }
 
     /* Main navigation */
-    .main-navigation__mobile {
+    .menu-mobile {
         display: block;
     }
 
@@ -1558,6 +1584,12 @@ p {
     .main-menu__link {
         padding: 5px 50px;
         font-size: 20px;
+    }
+
+    /* Promo header */
+    .promo-header__title {
+        font-size: 60px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
     }
 
     /* Skills grid */
