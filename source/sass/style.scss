@@ -215,67 +215,23 @@ p {
 	@include section-dashed($line-top: none);
 
 	&__mobile {
+		@include clearfix;
 		display: none;
-		padding: 15px 10px;
+		padding: 15px 50px;
 		font-family: $font-section-title;
 		font-size: 27px;
 		text-transform: uppercase;
 		color: #f9ebd9;
+
+		&--title {
+			float: left;
+		}
+
+		&--logo {
+			float: right;
+		}
 	}
 }
-/*
-.main-menu {
-	@include wrapper-container;
-	@include clearfix;
-	list-style: none;
-
-	&__item {
-		float: left;
-		width: 20%;
-		text-align: center;
-	}
-
-	&__link {
-		display: block;
-		padding: 41px 10px;
-		font-family: $font-section-title;
-		font-size: 27px;
-		text-transform: uppercase;
-		color: #f9ebd9;
-	}
-
-	&__item--logo {
-		position: relative;
-		height: 130px;
-		padding: 5px 0 0 0;
-	}
-
-	&__link--logo {
-		@include ib-align-middle;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		width: 152px;
-		height: 152px;
-		padding: 0;
-		margin: 0 auto;
-		border-radius: 50%;
-		background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
-		z-index: 2;
-	}
-
-	&__link--name {
-		display: inline-block;
-		vertical-align: middle;
-		font-size: 80px;
-		line-height: 1;
-		text-transform: lowercase;
-		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
-					2.5px 3px 0 rgba(252, 250, 247, 1);
-	}
-}
-*/
 
 .main-menu {
 	@include wrapper-container;
@@ -346,20 +302,8 @@ p {
 		font-family: $font-main-title;
 		font-size: 110px;
 		line-height: 1.2;
-		text-transform: uppercase;
-		color: #f6edd8;
-
-		&::after {
-			position: absolute;
-			content: '';
-			top: .168em;
-			left: 0;
-			right: 0;
-			width: 384px;
-			height: 100px;
-			margin: 0 auto;
-			background: url("../img/template/main-title-mask.png") no-repeat 0 0;
-		}
+		color: #FFF1CE;
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
 	}
 
 	&__tagname {
@@ -1039,62 +983,6 @@ p {
 		}
 	}
 
-/*
-	.main-navigation {
-		@include section-dashed($line-top: none, $bottom: 6px);
-	}
-
-	.main-menu {
-
-		&__item {
-			width: 50%;
-		}
-
-		&__item--about {
-			display: none;
-		}
-
-		&__item--logo {
-			display: none;
-		}
-
-		&__item--blog {
-			display: none;
-		}
-
-		&__link {
-			padding: 12px 10px;
-			font-size: 18px;
-		}
-	}
-*/
-/*
-	.main-navigation {
-
-		&__mobile {
-			display: block;
-		}
-	}
-
-	.main-menu {
-		display: none;
-
-		&__item {
-			float: none;
-			width: 100%;
-			text-align: left;
-		}
-
-		&__item--logo {
-			display: none;
-		}
-
-		&__link {
-			padding: 5px 50px;
-			font-size: 20px;
-		}
-	}
-*/
 	/* Skills grid */
 
 	.skills-grid {
@@ -1136,11 +1024,7 @@ p {
 	.promo-header {
 
 		&__title {
-			font-size: 80px;
-
-			&::after {
-				content: none;
-			}
+			font-size: 50px;
 		}
 	}
 

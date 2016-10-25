@@ -110,7 +110,12 @@ $(function() {
                         filter: '.filter-list__label'
                     },
                     load: {
-                        filter: '.app, .card, .icon, .logo, .web'
+                        filter:
+                            '.portfolio-html, ' +
+                            '.portfolio-wordpress, ' +
+                            '.portfolio-landing, ' +
+                            '.portfolio-shop, ' +
+                            '.portfolio-blog '
                     }
                 });
 

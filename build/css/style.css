@@ -9,14 +9,14 @@
     src: url("../fonts/Bazar/BazarMedium/BazarMedium.eot");
     src: url("../fonts/Bazar/BazarMedium/BazarMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/Bazar/BazarMedium/BazarMedium.woff") format("woff"), url("../fonts/Bazar/BazarMedium/BazarMedium.ttf") format("truetype");
 }
-/* Seaside Resort NF */
+/* Ironick */
 @font-face {
-    font-family: "SeasideResortNF";
+    font-family: "Ironick NF";
     font-style: normal;
     font-weight: normal; 
 
-    src: url("../fonts/SeasideResortNF/SeasideResortNF.eot");
-    src: url("../fonts/SeasideResortNF/SeasideResortNF.eot?#iefix") format("embedded-opentype"), url("../fonts/SeasideResortNF/SeasideResortNF.woff") format("woff"), url("../fonts/SeasideResortNF/SeasideResortNF.ttf") format("truetype");
+    src: url("../fonts/IronickNF/IronickNF.eot");
+    src: url("../fonts/IronickNF/IronickNF.eot?#iefix") format("embedded-opentype"), url("../fonts/IronickNF/IronickNF.woff") format("woff"), url("../fonts/IronickNF/IronickNF.ttf") format("truetype");
 }
 /* Roboto Slab */
 @font-face {
@@ -477,7 +477,7 @@ textarea {
 
 body {
     position: relative;
-    background: white;
+    background: url("../img/template/bg-skyblue.jpg") repeat 0 0;
     font-family: "RobotoSlabRegular", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.8;
@@ -698,66 +698,24 @@ p {
 }
 .main-navigation__mobile {
     display: none;
-    padding: 15px 10px;
+    padding: 15px 50px;
     font-family: "BazarMedium", "Arial", sans-serif;
     font-size: 27px;
     color: #f9ebd9; 
     text-transform: uppercase;
 }
-
-/*
-.main-menu {
-	@include wrapper-container;
-	@include clearfix;
-	list-style: none;
-
-	&__item {
-		float: left;
-		width: 20%;
-		text-align: center;
-	}
-
-	&__link {
-		display: block;
-		padding: 41px 10px;
-		font-family: $font-section-title;
-		font-size: 27px;
-		text-transform: uppercase;
-		color: #f9ebd9;
-	}
-
-	&__item--logo {
-		position: relative;
-		height: 130px;
-		padding: 5px 0 0 0;
-	}
-
-	&__link--logo {
-		@include ib-align-middle;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		width: 152px;
-		height: 152px;
-		padding: 0;
-		margin: 0 auto;
-		border-radius: 50%;
-		background: url("../img/template/bg-menu-logo.png") no-repeat 0 0;
-		z-index: 2;
-	}
-
-	&__link--name {
-		display: inline-block;
-		vertical-align: middle;
-		font-size: 80px;
-		line-height: 1;
-		text-transform: lowercase;
-		text-shadow: 1.5px 2px 0 rgba(0, 0, 0, .7),
-					2.5px 3px 0 rgba(252, 250, 247, 1);
-	}
+.main-navigation__mobile::after {
+    display: block;
+    content: "";
+    clear: both;
 }
-*/
+.main-navigation__mobile--title {
+    float: left;
+}
+.main-navigation__mobile--logo {
+    float: right;
+}
+
 .main-menu {
     width: 100%;
     max-width: 1000px;
@@ -851,22 +809,11 @@ p {
 .promo-header__title {
     position: relative;
     margin-bottom: 21px;
-    font-family: "SeasideResortNF", "Arial", sans-serif;
+    font-family: "Ironick NF", "Arial", sans-serif;
     font-size: 110px;
     line-height: 1.2;
-    color: #f6edd8; 
-    text-transform: uppercase;
-}
-.promo-header__title::after {
-    position: absolute;
-    content: "";
-    top: .168em;
-    left: 0;
-    right: 0;
-    width: 384px;
-    height: 100px;
-    margin: 0 auto;
-    background: url("../img/template/main-title-mask.png") no-repeat 0 0;
+    color: #fff1ce;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
 }
 .promo-header__tagname {
     overflow: hidden;
@@ -1613,62 +1560,6 @@ p {
         font-size: 20px;
     }
 
-    /*
-  	.main-navigation {
-  		@include section-dashed($line-top: none, $bottom: 6px);
-  	}
-  
-  	.main-menu {
-  
-  		&__item {
-  			width: 50%;
-  		}
-  
-  		&__item--about {
-  			display: none;
-  		}
-  
-  		&__item--logo {
-  			display: none;
-  		}
-  
-  		&__item--blog {
-  			display: none;
-  		}
-  
-  		&__link {
-  			padding: 12px 10px;
-  			font-size: 18px;
-  		}
-  	}
-  */
-    /*
-  	.main-navigation {
-  
-  		&__mobile {
-  			display: block;
-  		}
-  	}
-  
-  	.main-menu {
-  		display: none;
-  
-  		&__item {
-  			float: none;
-  			width: 100%;
-  			text-align: left;
-  		}
-  
-  		&__item--logo {
-  			display: none;
-  		}
-  
-  		&__link {
-  			padding: 5px 50px;
-  			font-size: 20px;
-  		}
-  	}
-  */
     /* Skills grid */
     .skills-grid__item {
         width: 50%;
@@ -1692,10 +1583,7 @@ p {
 
     /* Promo header */
     .promo-header__title {
-        font-size: 80px;
-    }
-    .promo-header__title::after {
-        content: none;
+        font-size: 50px;
     }
 
     /* Skills grid */
