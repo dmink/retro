@@ -851,6 +851,96 @@ p {
 	}
 }
 
+/* Post single
+--------------------------------------------------------------------- */
+
+.single-post {
+	background: $bg-beige;
+}
+
+/* Post content
+--------------------------------------------------------------------- */
+
+.post-content {
+	@include wrapper-container;
+	padding-top: 56px;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+
+	&__head {
+		margin-bottom: 50px;
+		text-align: center;
+	}
+
+	&__title {
+		position: relative;
+		padding-bottom: 12px;
+		margin-bottom: 4px;
+		font-family: $font-base;
+		font-size: 36px;
+		line-height: 1.2;
+		font-weight: bold;
+
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			width: 54px;
+			margin: 0 auto;
+			background-color: $font-color-base;
+		}
+	}
+	
+	&__category {
+		font-family: $font-section-subtitle;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $font-color-base;
+	}
+
+	&__article {
+
+		h3 {
+			position: relative;
+			margin-bottom: 24px;
+			font-size: 22px;
+			font-weight: bold;
+			
+			&::after {
+				position: absolute;
+				content: '';
+				bottom: 0;
+				left: 0;
+				width: 54px;
+				height: 2px;
+				background-color: $font-color-base;
+			}
+		}
+
+		p {
+			margin: 0 0 20px 0;
+		}
+
+		a {
+			border-bottom: 1px solid $font-color-base;
+			color: $font-color-base;
+			
+			&:hover {
+				color: black;
+			}
+		}
+
+		ul {
+			margin-bottom: 20px;
+			list-style: none;
+		}
+	}
+}
+
 /* Contact info
 --------------------------------------------------------------------- */
 
