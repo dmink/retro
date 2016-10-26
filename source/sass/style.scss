@@ -233,6 +233,7 @@ p {
 		font-size: 27px;
 		text-transform: uppercase;
 		color: #f9ebd9;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
 	}
 
 	&__item--logo {
@@ -906,8 +907,10 @@ p {
 
 		h3 {
 			position: relative;
-			margin-bottom: 24px;
+			padding-bottom: 5px;
+			margin-bottom: 22px;
 			font-size: 22px;
+			line-height: 1.4;
 			font-weight: bold;
 			
 			&::after {

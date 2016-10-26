@@ -15,7 +15,8 @@ var pagesSrc = 'source/*.html',
     singleSrc = 'source/single/**/*.*',
     jsSrc = 'source/js/*.*',
     fontsSrc = 'source/fonts/**',
-    imgSrc = 'source/img/**';
+    imgSrc = 'source/img/**',
+    mailSrc = 'source/mail/**';
 
 // Build
 var pagesDest = 'build',
@@ -23,7 +24,8 @@ var pagesDest = 'build',
     singleDest = 'build',
     jsDest = 'build/js',
     fontsDest = 'build/fonts',
-    imgDest = 'build/img';
+    imgDest = 'build/img',
+    mailDest = 'build/mail';
 
 // Pages
 gulp.task('pages', function () {
@@ -65,6 +67,13 @@ gulp.task('img', function() {
         .pipe(gulp.dest(imgDest));
 });
 
+// Mailer
+gulp.task('mail', function() {
+    gulp.src(mailSrc)
+        .pipe(gulp.dest(mailDest));
+});
+
+
 // Watcher
 gulp.task('watch', function() {
     gulp.watch(scssFold, ['styles']);
@@ -74,8 +83,9 @@ gulp.task('watch', function() {
     gulp.watch(jsSrc, ['js']);
     gulp.watch(imgSrc, ['img']);
     gulp.watch(fontsSrc, ['fonts']);
+    gulp.watch(mailSrc, ['mail']);
 });
 
 // Default (gulp) task
 gulp.task('default', ['js', 'img', 'fonts',
-    'styles', 'single', 'pages', 'watch']);
+    'styles', 'single', 'pages', 'mail', 'watch']);
