@@ -4,5 +4,5 @@
 .sass-cache
 psd/
 /node_modules
-source/mail/mail.php
-build/mail/mail.php
+source/mail/action.php
+build/mail/action.php
