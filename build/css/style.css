@@ -1576,13 +1576,20 @@ p {
 .form-feedback__field--btn {
     text-align: left;
 }
-.form-feedback__input {
+.form-feedback__input,
+.form-feedback__name,
+.form-feedback__email,
+.form-feedback__message {
     display: block;
     width: 100%;
     padding: 5px 10px 4px 10px;
     border: none;
     border-radius: 6px;
     box-shadow: 1.4px 1.4px 0 rgba(255, 255, 255, .4), inset 1.4px 1.4px 0 rgba(0, 0, 0, .2);
+}
+.form-feedback__message {
+    overflow-y: auto; 
+    resize: none;
 }
 .form-feedback__btn {
     display: inline-block;
@@ -1634,6 +1641,14 @@ p {
     background: #f5eee3 url("../img/template/social-list-email.png") no-repeat 50% 50%;
 }
 
+/* fffffffffffffffffffffffffffffffffffffff
+--------------------------------------------------------------------- */
+/*
+.form-feedback textarea {
+	resize: none;
+	overflow-y: auto;
+}
+*/
 /* Responsive
 --------------------------------------------------------------------- */
 @media screen and (max-width: 840px) {

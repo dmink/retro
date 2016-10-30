@@ -25,17 +25,17 @@
 
 // Sticky navigation - scrolling
 
-$(function() {
-    $(window).scroll( function() {
+    $(function() {
+        $(window).scroll( function() {
 
-        if($(this).scrollTop() >= 1) {
-            $('.top-header').addClass('top-header--scrolling');
-        }
-        else{
-            $('.top-header').removeClass('top-header--scrolling');
-        }
+            if($(this).scrollTop() >= 1) {
+                $('.top-header').addClass('top-header--scrolling');
+            }
+            else{
+                $('.top-header').removeClass('top-header--scrolling');
+            }
+        });
     });
-});
 
 // Main navigation - moving to anchor and active item
 
@@ -126,6 +126,90 @@ $(function() {
 
         // Run the show!
         filterList.init();
-
-
     });
+
+// Form validation
+
+$(document).ready(function(){
+
+    $( 'input.form-feedback__name, input.form-feedback__email, textarea.form-feedback__message' )
+        .unbind().blur( function() {
+
+        var fieldName = $(this).attr('name');
+        var fieldValue = $(this).val();
+
+        switch(fieldName) {
+
+            case 'feedbackName':
+                var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+                if( fieldValue.length > 2 && fieldValue != '' && rv_name.test(fieldValue) ) {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').text( 'Принято' )
+                        .css('color','white');
+                } else {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html( 'Обязательное поле' )
+                        .css('color','red');
+                }
+                break;
+
+            case 'feedbackEmail':
+                var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+
+                if(fieldValue != '' && rv_email.test(fieldValue)) {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').text( 'Принято' )
+                        .css('color','white');
+                } else {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html( 'Обязательное поле' )
+                        .css('color','red');
+                }
+                break;
+
+            case 'feedbackMessage':
+
+                if(fieldValue != '' && fieldValue.length < 5000) {
+                    $(this).addClass('not_error');
+                    $(this).next('.error-box').text( 'Принято' )
+                        .css('color','white');
+                } else {
+                    $(this).removeClass('not_error').addClass('error');
+                    $(this).next('.error-box').html( 'Обязательное поле' )
+                        .css('color','red');
+                }
+                break;
+
+
+        } // end switch()
+
+    }); // end blur()
+
+    $('form.form-feedback').submit(function(e) {
+
+        e.preventDefault();
+
+        if( $('.not_error').length == 3 ) {
+
+            $.ajax({
+                url: '../mail/action.php',
+                type: 'post',
+                data: $(this).serialize(),
+
+                beforeSend: function() {
+                    $( 'form.form-feedback :input' ).attr( 'disabled', 'disabled' );
+                },
+
+                success: function() {
+                    $( 'form.form-feedback :text, textarea' ).removeClass('not_error').next('.error-box').text('');
+                }
+            });
+
+        } else {
+            return false;
+        }
+
+    }); // end submit()
+
+});

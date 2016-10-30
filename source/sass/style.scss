@@ -996,6 +996,20 @@ p {
 					inset 1.4px 1.4px 0 rgba(0, 0, 0, .2);
 	}
 
+	&__name {
+		@extend .form-feedback__input;
+	}
+
+	&__email {
+		@extend .form-feedback__input;
+	}
+
+	&__message {
+		@extend .form-feedback__input;
+		resize: none;
+		overflow-y: auto;
+	}
+
 	&__btn {
 		display: inline-block;
 		padding: 5px 17px 4px 17px;
@@ -1055,6 +1069,16 @@ p {
 		background: #f5eee3 url("../img/template/social-list-email.png") no-repeat 50% 50%;
 	}
 }
+
+/* fffffffffffffffffffffffffffffffffffffff
+--------------------------------------------------------------------- */
+
+/*
+.form-feedback textarea {
+	resize: none;
+	overflow-y: auto;
+}
+*/
 
 /* Responsive
 --------------------------------------------------------------------- */
