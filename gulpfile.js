@@ -10,7 +10,8 @@ var scssFold = 'source/sass/*.scss',
     blocksFold = 'source/blocks/*.html';
 
 // Source
-var pagesSrc = 'source/*.html',
+var rootSrc = ['source/*.*', '!source/*.html'],
+    pagesSrc = 'source/*.html',
     styleSrc = 'source/sass/style.scss',
     singleSrc = 'source/single/**/*.*',
     jsSrc = 'source/js/*.*',
@@ -19,7 +20,8 @@ var pagesSrc = 'source/*.html',
     mailSrc = 'source/mail/**';
 
 // Build
-var pagesDest = 'build',
+var rootDest = 'build',
+    pagesDest = 'build',
     styleDest = 'build/css',
     singleDest = 'build',
     jsDest = 'build/js',
@@ -73,6 +75,11 @@ gulp.task('mail', function() {
         .pipe(gulp.dest(mailDest));
 });
 
+//Import of the settings (.htaccess, robots.txt etc)
+gulp.task('root', function() {
+    gulp.src(rootSrc)
+        .pipe(gulp.dest(rootDest));
+});
 
 // Watcher
 gulp.task('watch', function() {
@@ -84,8 +91,9 @@ gulp.task('watch', function() {
     gulp.watch(imgSrc, ['img']);
     gulp.watch(fontsSrc, ['fonts']);
     gulp.watch(mailSrc, ['mail']);
+    gulp.watch(rootSrc, ['root']);
 });
 
 // Default (gulp) task
 gulp.task('default', ['js', 'img', 'fonts',
-    'styles', 'single', 'pages', 'mail', 'watch']);
+    'styles', 'single', 'pages', 'root', 'mail', 'watch']);

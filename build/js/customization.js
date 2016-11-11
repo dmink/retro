@@ -144,40 +144,34 @@ $(document).ready(function(){
                 var rv_name = /^[a-zA-Zа-яА-Я]+$/;
 
                 if( fieldValue.length > 2 && fieldValue != '' && rv_name.test(fieldValue) ) {
-                    $(this).addClass('not_error');
-                    $(this).next('.error-box').text( 'Принято' )
-                        .css('color','white');
+                    $(this).addClass('form-feedback--correct');
+                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
-                    $(this).removeClass('not_error').addClass('error');
-                    $(this).next('.error-box').html( 'Обязательное поле' )
-                        .css('color','red');
+                    $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
+                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 
             case 'feedbackEmail':
                 var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
 
-                if(fieldValue != '' && rv_email.test(fieldValue)) {
-                    $(this).addClass('not_error');
-                    $(this).next('.error-box').text( 'Принято' )
-                        .css('color','white');
+                if( fieldValue != '' && rv_email.test(fieldValue) ) {
+                    $(this).addClass('form-feedback--correct');
+                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
-                    $(this).removeClass('not_error').addClass('error');
-                    $(this).next('.error-box').html( 'Обязательное поле' )
-                        .css('color','red');
+                    $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
+                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 
             case 'feedbackMessage':
 
-                if(fieldValue != '' && fieldValue.length < 5000) {
-                    $(this).addClass('not_error');
-                    $(this).next('.error-box').text( 'Принято' )
-                        .css('color','white');
+                if( fieldValue != '' && fieldValue.length < 5000 ) {
+                    $(this).addClass('form-feedback--correct');
+                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
-                    $(this).removeClass('not_error').addClass('error');
-                    $(this).next('.error-box').html( 'Обязательное поле' )
-                        .css('color','red');
+                    $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
+                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 
@@ -190,7 +184,7 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-        if( $('.not_error').length == 3 ) {
+        if( $('.form-feedback--correct').length == 3 ) {
 
             $.ajax({
                 url: '../mail/action.php',
@@ -202,7 +196,7 @@ $(document).ready(function(){
                 },
 
                 success: function() {
-                    $( 'form.form-feedback :text, textarea' ).removeClass('not_error').next('.error-box').text('');
+                    $( 'form.form-feedback :text, textarea' ).removeClass('form-feedback--correct').next('.form-feedback__notice').text('');
                 }
             });
 

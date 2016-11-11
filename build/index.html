@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" type="image/x-icon" href="img/template/bg-menu-logo.png">
+	<link rel="shortcut icon" type="image/x-icon" href="img/template/favicon.png">
 </head>
 
 	<body class="page-home">
@@ -26,19 +26,19 @@
 		
 		            <ul class="main-menu js-menu-mobile">
 		                <li class="main-menu__item main-menu__item--about">
-		                    <a class="main-menu__link" href="index.html">About me</a>
+		                    <a class="main-menu__link" href="/">About me</a>
 		                </li>
 		                <li class="main-menu__item main-menu__item--portfolio">
-		                    <a class="main-menu__link" href="portfolio.html">Portfolio</a>
+		                    <a class="main-menu__link" href="/portfolio">Portfolio</a>
 		                </li>
 		                <li class="main-menu__item main-menu__item--logo">
 		                    <a class="main-menu__link main-menu__link--logo"><span class="main-menu__link--name">dm</span></a>
 		                </li>
 		                <li class="main-menu__item main-menu__item--blog">
-		                    <a class="main-menu__link" href="blog.html">My blog</a>
+		                    <a class="main-menu__link" href="/blog">My blog</a>
 		                </li>
 		                <li class="main-menu__item main-menu__item--contact">
-		                    <a class="main-menu__link" href="contact.html">Contact me</a>
+		                    <a class="main-menu__link" href="/contact">Contact me</a>
 		                </li>
 		            </ul>
 		
@@ -357,13 +357,13 @@
 		            <div class="post-preview">
 		        
 		                <div class="post-preview__thumb">
-		                    <a class="post-preview__thumb-link" href="learning-english.html"><img class="post-preview__thumb-img" src="img/content/post-thumb-01.jpg" alt="" title=""></a>
+		                    <a class="post-preview__thumb-link" href="/learning-english"><img class="post-preview__thumb-img" src="img/content/post-thumb-01.jpg" alt="" title=""></a>
 		                </div>
 		        
 		                <div class="post-preview__info">
 		                    <div class="post-preview__head">
 		                        <h3 class="post-preview__title">
-		                            <a class="post-preview__title-link" href="learning-english.html">The Magic Wheal</a>
+		                            <a class="post-preview__title-link" href="/learning-english">The Magic Wheal</a>
 		                        </h3>
 		                        <div class="post-preview__detail">
 		                            <div class="post-preview__detail-meta">
@@ -398,13 +398,13 @@
 		            <div class="post-preview">
 		        
 		                <div class="post-preview__thumb">
-		                    <a class="post-preview__thumb-link" href="learning-english.html"><img class="post-preview__thumb-img" src="img/content/post-thumb-02.jpg" alt="" title=""></a>
+		                    <a class="post-preview__thumb-link" href="/learning-english"><img class="post-preview__thumb-img" src="img/content/post-thumb-02.jpg" alt="" title=""></a>
 		                </div>
 		        
 		                <div class="post-preview__info">
 		                    <div class="post-preview__head">
 		                        <h3 class="post-preview__title">
-		                            <a class="post-preview__title-link" href="learning-english.html">The Magic Wheal</a>
+		                            <a class="post-preview__title-link" href="/learning-english">The Magic Wheal</a>
 		                        </h3>
 		                        <div class="post-preview__detail">
 		                            <div class="post-preview__detail-meta">
@@ -439,13 +439,13 @@
 		            <div class="post-preview">
 		        
 		                <div class="post-preview__thumb">
-		                    <a class="post-preview__thumb-link" href="learning-english.html"><img class="post-preview__thumb-img" src="img/content/post-thumb-03.jpg" alt="" title=""></a>
+		                    <a class="post-preview__thumb-link" href="/learning-english"><img class="post-preview__thumb-img" src="img/content/post-thumb-03.jpg" alt="" title=""></a>
 		                </div>
 		        
 		                <div class="post-preview__info">
 		                    <div class="post-preview__head">
 		                        <h3 class="post-preview__title">
-		                            <a class="post-preview__title-link" href="learning-english.html">Learning English</a>
+		                            <a class="post-preview__title-link" href="/learning-english">Learning English</a>
 		                        </h3>
 		                        <div class="post-preview__detail">
 		                            <div class="post-preview__detail-meta">
@@ -505,41 +505,22 @@
 		
 		            <div class="contact-info__form-container">
 		
-		                <!-- BEGIN .form-feedback --><!--
-		                <form id="form-feedback" class="form-feedback" name="formFeedback" action="mail/action.php" method="post" onsubmit="return validateForm()">
-		                
-		                    <div class="form-feedback__field">
-		                        <input class="form-feedback__input" type="text" name="feedbackName" placeholder="Name">
-		                    </div>
-		                    <div class="form-feedback__field">
-		                        <input class="form-feedback__input" type="email" name="feedbackEmail" placeholder="Email address">
-		                    </div>
-		                    <div class="form-feedback__field">
-		                        <textarea class="form-feedback__input" name="feedbackMessage" cols="30" rows="5" placeholder="Your message"></textarea>
-		                    </div>
-		                    <div class="form-feedback__field form-feedback__field--btn">
-		                        <input class="form-feedback__btn" type="submit" value="Send Message">
-		                    </div>
-		                
-		                </form>-->
-		                <!-- END .form-feedback -->
-		                
 		                <!-- BEGIN .form-feedback -->
 		                <form class="form-feedback" name="formFeedback">
 		                
 		                    <div class="form-feedback__field">
 		                        <input class="form-feedback__name" name="feedbackName" type="text" placeholder="Name">
-		                        <div class="error-box">&nbsp;</div>
+		                        <div>&nbsp;</div>
 		                    </div>
 		                
 		                    <div class="form-feedback__field">
 		                        <input class="form-feedback__email" name="feedbackEmail" type="text" placeholder="Email">
-		                        <div class="error-box">&nbsp;</div>
+		                        <div>&nbsp;</div>
 		                    </div>
 		                
 		                    <div class="form-feedback__field">
 		                        <textarea class="form-feedback__message" name="feedbackMessage" cols="30" rows="5" placeholder="Message"></textarea>
-		                        <div class="error-box">&nbsp;</div>
+		                        <div>&nbsp;</div>
 		                    </div>
 		                
 		                    <div class="form-feedback__field form-feedback__field--btn">
