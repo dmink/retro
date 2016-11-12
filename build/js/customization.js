@@ -145,10 +145,8 @@ $(document).ready(function(){
 
                 if( fieldValue.length > 2 && fieldValue != '' && rv_name.test(fieldValue) ) {
                     $(this).addClass('form-feedback--correct');
-                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
                     $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
-                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 
@@ -157,10 +155,8 @@ $(document).ready(function(){
 
                 if( fieldValue != '' && rv_email.test(fieldValue) ) {
                     $(this).addClass('form-feedback--correct');
-                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
                     $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
-                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 
@@ -168,10 +164,8 @@ $(document).ready(function(){
 
                 if( fieldValue != '' && fieldValue.length < 5000 ) {
                     $(this).addClass('form-feedback--correct');
-                    $(this).next().addClass('form-feedback__notice').text( 'Принято' );
                 } else {
                     $(this).removeClass('form-feedback--correct').addClass('form-feedback--error');
-                    $(this).next().addClass('form-feedback__notice').html( 'Обязательное поле' );
                 }
                 break;
 

@@ -1587,25 +1587,6 @@ p {
     border-radius: 6px;
     box-shadow: 1.4px 1.4px 0 rgba(255, 255, 255, .4), inset 1.4px 1.4px 0 rgba(0, 0, 0, .2);
 }
-.form-feedback__input.form-feedback--error ~ .form-feedback__notice,
-.form-feedback--error.form-feedback__name ~ .form-feedback__notice,
-.form-feedback--error.form-feedback__email ~ .form-feedback__notice,
-.form-feedback--error.form-feedback__message ~ .form-feedback__notice {
-    color: red;
-}
-.form-feedback__input.form-feedback--correct ~ .form-feedback__notice,
-.form-feedback--correct.form-feedback__name ~ .form-feedback__notice,
-.form-feedback--correct.form-feedback__email ~ .form-feedback__notice,
-.form-feedback--correct.form-feedback__message ~ .form-feedback__notice {
-    color: white;
-}
-.form-feedback__input ~ div:not(.form-feedback__notice),
-.form-feedback__name ~ div:not(.form-feedback__notice),
-.form-feedback__email ~ div:not(.form-feedback__notice),
-.form-feedback__message ~ div:not(.form-feedback__notice) {
-    font-size: 1px;
-    line-height: 1;
-}
 .form-feedback__message {
     overflow-y: auto; 
     resize: none;
