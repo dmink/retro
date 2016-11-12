@@ -1188,10 +1188,13 @@ p {
 }
 .filter-list__item {
     display: inline-block;
-    margin-right: 22px;
+    margin-left: 22px;
     border-radius: 3px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
     vertical-align: middle;
+}
+.filter-list__item:first-child {
+    margin-left: 0;
 }
 .filter-list__item--title {
     box-shadow: none;
@@ -1237,7 +1240,7 @@ p {
 
 /* Portfolio preview */
 .portfolio-preview {
-    margin-bottom: 15px;
+    margin: 0 -1% 15px -1%;
 }
 .portfolio-preview::after {
     display: block;
@@ -1248,18 +1251,16 @@ p {
     display: none;
     float: left;
     overflow: hidden;
-    width: 23.5%;
-    padding: 4px;
-    margin: 0 2% 2% 0;
-    border-radius: 6px;
-    background-color: #fbfaf6;
-    box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
-}
-.portfolio-preview__item:nth-of-type(4n) {
+    width: 25%;
+    padding: 0 1%; 
     margin: 0 0 2% 0;
 }
 .portfolio-preview__link {
     display: block;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: #fbfaf6;
+    box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, .3);
 }
 .portfolio-preview__link:hover .portfolio-preview__caption::before {
     top: -20px;
@@ -1641,14 +1642,6 @@ p {
     background: #f5eee3 url("../img/template/social-list-email.png") no-repeat 50% 50%;
 }
 
-/* fffffffffffffffffffffffffffffffffffffff
---------------------------------------------------------------------- */
-/*
-.form-feedback textarea {
-	resize: none;
-	overflow-y: auto;
-}
-*/
 /* Responsive
 --------------------------------------------------------------------- */
 @media screen and (max-width: 840px) {
@@ -1695,11 +1688,7 @@ p {
 
     /* Portfolio grid */
     .portfolio-preview__item {
-        width: 48%;
-        margin: 0 4% 5% 0;
-        background-color: #fbfaf6;
-    }
-    .portfolio-preview__item:nth-of-type(2n) {
+        width: 50%;
         margin: 0 0 5% 0;
     }
 }
